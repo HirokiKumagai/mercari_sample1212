@@ -5,7 +5,7 @@ lock "~> 3.11.2"
 # capistranoのバージョンを記載。固定のバージョンを利用し続け、バージョン変更によるトラブルを防止する
 
 # Capistranoのログの表示に利用する
-set :application, 'mercari_kuma'
+set :application, 'mercari_sample1212'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:hirokidiv/mercari_sample1212.git'
