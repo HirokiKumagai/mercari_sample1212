@@ -70,3 +70,7 @@ group :production do
   # Adds support for Capybara system testing and selenium driver
   gem 'unicorn'
 end
+
+gem "mini_magick"
+gem "carrierwave"
+gem "fog-aws"
