@@ -11,8 +11,6 @@ Rails.application.routes.draw do
     get "register/new", :to => "register/registrations#new"
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get "/", to: "tops#index"
-  namespace :register do
-    resources :registrations
-  end
+  root "tops#index"
+  get 'signup/new'
 end

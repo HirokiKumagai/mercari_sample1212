@@ -47,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'spring-commands-rspec' #テストを早く実行するためのgem 
+  gem 'pry-rails'
 end
 
 group :development do
