@@ -29,6 +29,9 @@
     <%= f.password_field :password_confirmation, autocomplete: "password_confirmation" %>
   </div>
 
+  <%# invisible_recaptcha_tags text: 'Submit form' %>
+  <%= recaptcha_tags({class: "action" }) %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

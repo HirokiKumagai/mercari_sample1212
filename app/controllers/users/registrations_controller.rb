@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  prepend_before_action :check_captcha, only: [:create]
   prepend_before_action :require_no_authentication, only: [:new, :create]
 
   # GET /resource/sign_up
@@ -60,4 +61,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  private
+  def customize_sign_up_params
+    devise_parameter_sanitizer.permit :sign_up, keys: [:nickname, :email, :password, :password_confirmation]
+  end
+
+  def check_captcha
+    self.resource = resource_class.new sign_up_params
+    resource.validate
+    unless verify_recaptcha(model: resource)
+      respond_with_navigational(resource) { render :new }
+    end
+  end
 end

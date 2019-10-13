@@ -6,12 +6,10 @@ RSpec.describe "Signup", type: :request do
     it 'signupページにアクセスできる' do
       get signup_new_path
       expect(response).to have_http_status(200)
-      expect(response.body).to include('新規会員登録')
     end
 
     it 'bodyに"新規会員登録"という記述があること' do
       get signup_new_path
-      expect(response).to have_http_status(200)
       expect(response.body).to include('新規会員登録')
     end
 
@@ -25,5 +23,10 @@ RSpec.describe "Signup", type: :request do
       user = FactoryBot.create(:user)
       expect(user).to be_valid
     end
+
+    # it 'recaptchaが表示できている' do
+    #   get signup_path
+    #   expect(response.body).to include("私はロボットではありません")
+    # end
   end
 end
