@@ -23,10 +23,21 @@ RSpec.describe "Signup", type: :request do
       user = FactoryBot.create(:user)
       expect(user).to be_valid
     end
+  end
 
-    # it 'recaptchaが表示できている' do
-    #   get signup_path
-    #   expect(response.body).to include("私はロボットではありません")
+  describe 'GET #index' do
+    context 'with authentication' do
+      login
+      it 'return success status' do
+        get root_path
+        expect(response).to have_http_status(:success)
+      end
+    end
+    # context 'without authentication' do
+    #   it 'return fail status' do
+    #     get '/pages'
+    #     expect(response).to have_http_status(302)
+    #   end
     # end
   end
 end
