@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_065722) do
+ActiveRecord::Schema.define(version: 2019_10_18_034011) do
+
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "first_name_kana", default: "", null: false
+    t.string "last_name_kana", default: "", null: false
+    t.integer "tel"
+    t.integer "postal_code", default: 1, null: false
+    t.integer "prefecture", default: 1, null: false
+    t.string "city", default: "", null: false
+    t.integer "address_number", null: false
+    t.string "building", default: "", null: false
+    t.text "introduction"
+    t.string "avatar"
+    t.integer "birthday", default: 1, null: false
+    t.string "gender", default: "", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
@@ -25,4 +46,5 @@ ActiveRecord::Schema.define(version: 2019_10_07_065722) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "profiles", "users"
 end

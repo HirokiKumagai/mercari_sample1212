@@ -1,0 +1,14 @@
+<h2>電話番号認証</h2>
+<%= form_for @profile, url: signup_sms_confirmation_index_path do |f| %>
+  <div class="field">
+    <%= f.label :tel %>携帯番号の確認<br />
+    <%= f.number_field :tel, autofocus: true, autocomplete: "tel" %>
+  </div>
+  <p>本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。</p>
+
+  <div class="actions">
+    <%= f.submit "SMSを送信する" %>
+  </div>
+  <p>※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。</p>
+  <%= link_to "電話番号の確認が必要な理由", "#" %>
+<% end %>
