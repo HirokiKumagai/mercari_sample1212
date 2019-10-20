@@ -6,7 +6,7 @@ class Signup::AddressController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     if @profile.save
-      redirect_to root_path
+      redirect_to new_signup_credit_path
     else
       render new_signup_address_path
     end 

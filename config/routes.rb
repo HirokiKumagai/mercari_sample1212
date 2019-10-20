@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   namespace :signup do
     resources :sms_confirmation, only: [:new, :create]
     resources :address, only: [:new, :create]
+    resources :credit, only: [:new, :create]
   end
   
 end

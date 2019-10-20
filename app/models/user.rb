@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :nickname, :email, :password, :password_confirmation, presence: true
   validates :nickname, :email, uniqueness: { message: "has already been email" } 
   has_one :profile 
+  has_one :credit
 end
