@@ -39,7 +39,7 @@ namespace :deploy do
   end
 end
 
-append :linked_files, 'config/master.key'
+append :linked_files,'config/database.yml', 'config/master.key'
 
 
 # Default branch is :master
