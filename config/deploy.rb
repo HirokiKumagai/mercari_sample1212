@@ -39,6 +39,8 @@ namespace :deploy do
   end
 end
 
+append :linked_files, 'config/master.key'
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
