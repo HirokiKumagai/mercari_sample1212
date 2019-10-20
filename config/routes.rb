@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   end
   
   root "tops#index"
-  resources :signup, only: [:new]
   resources :login, only: [:new]
   
   namespace :mypage do
@@ -24,6 +23,7 @@ Rails.application.routes.draw do
     resources :sms_confirmation, only: [:new, :create]
     resources :address, only: [:new, :create]
     resources :credit, only: [:new, :create]
+    resources :first_step, only: [:new]
   end
   
 end
