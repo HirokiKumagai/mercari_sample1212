@@ -1,0 +1,40 @@
+<h2>住所入力</h2>
+<%= form_for [ @profile], url: signup_address_index_path do |f| %>
+  <div class="field">
+    <%= f.label :first_name %>お名前<br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name_kana %>お名前<br />
+    <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
+    <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
+  </div>
+  <div class="field">
+    <%= f.label :postal_code %>郵便番号<br />
+    <%= f.number_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
+  </div>
+  <div class="field">
+    <%= f.label :prefecture %>都道府県<br />
+    <%= f.number_field :prefecture, autofocus: true, autocomplete: "prefecture" %>
+  </div>
+  <div class="field">
+    <%= f.label :city %>市区町村<br />
+    <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
+  </div>
+  <div class="field">
+    <%= f.label :address_number %>番地<br />
+    <%= f.number_field :address_number, autofocus: true, autocomplete: "address_number" %>
+  </div>
+  <div class="field">
+    <%= f.label :building %>建物<br />
+    <%= f.text_field :building, autofocus: true, autocomplete: "building" %>
+  </div>
+  <div class="field">
+    <%= f.label :tel %>電話<br />
+    <%= f.number_field :tel, autofocus: true, autocomplete: "tel" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "次に進む" %>
+  </div>
+<% end %>

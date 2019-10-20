@@ -1,0 +1,18 @@
+<h2>支払い方法</h2>
+<%= form_for [ @credit], url: signup_credit_index_path do |f| %>
+  <div class="field">
+    <%= f.label :number %>カード番号<br />
+    <%= f.number_field :number, autofocus: true, autocomplete: "number" %>
+  </div>
+  <div class="field">
+    <%= f.label :expiration_date %>有効期限<br />
+    <%= f.number_field :expiration_date, autofocus: true, autocomplete: "expiration_date" %>
+  </div>
+  <div class="field">
+    <%= f.label :secure_code %>セキュリティコード<br />
+    <%= f.text_field :secure_code, autofocus: true, autocomplete: "secure_code" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "次に進む" %>
+  </div>
+<% end %>

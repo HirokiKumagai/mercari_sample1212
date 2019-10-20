@@ -1,0 +1,33 @@
+<main class="single__main">
+  <section class="single__container">
+    <p>アカウントをお持ちでないかたはこちら</p>
+    <%= link_to "新規会員登録", new_user_registration_path %>
+    <div class="single__inner">
+      <div class="single__content">
+        <button id="facebook-login" class="btn-default btn-sns btn-sns-facebook"><i class="icon-facebook"></i>Facebookで登録する</button>
+        <button id="google-login" class="btn-default btn-sns btn-sns-google">Googleで登録する</button>
+      </div>
+    </div>
+  </section>
+  <section>
+    <%# form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(@user, url: session_path(@user)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+
+      <%= recaptcha_tags({class: "action" }) %>
+
+      <div class="actions">
+        <%= f.submit "Log in" %>
+      </div>
+    <% end %>
+    <%= link_to "パスワードをお忘れの方はこちら", "#" %>
+  </section>
+</main>
