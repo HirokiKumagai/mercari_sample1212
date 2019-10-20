@@ -10,11 +10,11 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.integer         :prefecture, null: false, default: 1
       t.string          :city, null:false, default: ""
       t.integer         :address_number, null: false
-      t.string          :building, null: false, default: ""
+      t.string          :building, default: ""
       t.text            :introduction
       t.string          :avatar
       t.integer         :birthday, null: false, default: 1
-      t.string          :gender, null: false, default: ""
+      # t.string          :gender, null: false, default: ""
       t.references      :user, foreign_key: true
       t.timestamps
     end

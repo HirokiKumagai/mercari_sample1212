@@ -5,7 +5,7 @@ class Signup::SmsConfirmationController < ApplicationController
 
   def create
     session[:profile_tel] = profile_params[:tel]
-    # redirect_to 住所登録のパスへ
+    redirect_to new_signup_address_path
   end
 
   private

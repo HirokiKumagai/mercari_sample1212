@@ -63,13 +63,6 @@ RSpec.describe Profile, type: :model do
     expect(profile.errors.messages[:address_number]).to include("can't be blank")
   end
 
-  it 'buildingがないとvalidateエラーがでる。' do
-    user = FactoryBot.create(:user)
-    profile = FactoryBot.build(:profile, user_id: user.id, building: nil)
-    profile.valid?
-    expect(profile.errors.messages[:building]).to include("can't be blank")
-  end
-
   it 'birthdayがないとvalidateエラーがでる。' do
     user = FactoryBot.create(:user)
     profile = FactoryBot.build(:profile, user_id: user.id, birthday: nil)
@@ -77,10 +70,4 @@ RSpec.describe Profile, type: :model do
     expect(profile.errors.messages[:birthday]).to include("can't be blank")
   end
 
-  it 'genderがないとvalidateエラーがでる。' do
-    user = FactoryBot.create(:user)
-    profile = FactoryBot.build(:profile, user_id: user.id, gender: nil)
-    profile.valid?
-    expect(profile.errors.messages[:gender]).to include("can't be blank")
-  end
 end

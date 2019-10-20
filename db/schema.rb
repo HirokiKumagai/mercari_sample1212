@@ -22,11 +22,10 @@ ActiveRecord::Schema.define(version: 2019_10_18_034011) do
     t.integer "prefecture", default: 1, null: false
     t.string "city", default: "", null: false
     t.integer "address_number", null: false
-    t.string "building", default: "", null: false
+    t.string "building", default: ""
     t.text "introduction"
     t.string "avatar"
     t.integer "birthday", default: 1, null: false
-    t.string "gender", default: "", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
