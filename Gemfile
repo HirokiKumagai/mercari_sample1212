@@ -81,3 +81,5 @@ gem "carrierwave"
 gem "fog-aws"
 gem "devise"
 gem "recaptcha"
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
