@@ -4,8 +4,8 @@
     <%= link_to "新規会員登録", new_user_registration_path %>
     <div class="single__inner">
       <div class="single__content">
-        <button id="facebook-login" class="btn-default btn-sns btn-sns-facebook"><i class="icon-facebook"></i>Facebookで登録する</button>
-        <button id="google-login" class="btn-default btn-sns btn-sns-google">Googleで登録する</button>
+        <%= link_to 'Facebookで登録', user_facebook_omniauth_authorize_path %>
+        <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path %>
       </div>
     </div>
   </section>
