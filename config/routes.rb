@@ -26,5 +26,9 @@ Rails.application.routes.draw do
     resources :credit, only: [:new, :create]
     resources :first_step, only: [:new]
   end
+
+   namespace :product do
+    resources :exhibit, only: [:new]
+  end
   
 end

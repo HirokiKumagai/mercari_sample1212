@@ -1,0 +1,21 @@
+<%= form_for(@product, url: new_product_exhibit_path) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "on" %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.number_field :password, autocomplete: "on" %>
+  </div>
+  <div class="field">
+    <%= f.label :detail %><br />
+    <%= f.text_field :detail, autofocus: true, autocomplete: "on" %>
+  </div>
+  <div class="field">
+    <%= f.label :condition %><br />
+    <%= f.number_field :condition, autocomplete: "on" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
